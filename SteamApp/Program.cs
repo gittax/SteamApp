@@ -45,8 +45,14 @@ namespace SteamApp
 
                         using (var file = new System.IO.StreamWriter(id + ".txt"))
                         {
+                            var x = 0;
                             foreach (KeyValuePair<string, int> pair in groupList)
                             {
+                                if (x < 10)
+                                {
+                                    Console.WriteLine("{0}: {1}", pair.Key, pair.Value);
+                                    x++;
+                                }
                                 file.WriteLine("{0}: {1}", pair.Key, pair.Value);
                             }
                         }
